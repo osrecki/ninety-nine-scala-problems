@@ -13,8 +13,8 @@ object Problem1 {
   def lastBuiltIn[A](list: Seq[A]): A = list.last
 
   def lastRecursive[A](list: Seq[A]): A = list match {
-    case head :: Nil  => head
-    case _    :: tail => lastRecursive(tail)
+    case head +: Nil  => head
+    case _    +: tail => lastRecursive(tail)
     case _            => throw new NoSuchElementException("Empty list.")
   }
 }

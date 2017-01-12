@@ -14,8 +14,8 @@ object Problem3 {
   def nthBuiltIn[A](k: Int, list: Seq[A]): A = list(k)
 
   def nthRecursive[A](k: Int, list: Seq[A]): A = (k, list) match {
-    case (0, head :: _) => head
-    case (_, _ :: tail) => nthRecursive(k - 1, tail)
+    case (0, head +: _) => head
+    case (_, _ +: tail) => nthRecursive(k - 1, tail)
     case _              => throw new IndexOutOfBoundsException
   }
 }

@@ -18,8 +18,8 @@ object Problem2 {
     else              throw new NoSuchElementException
 
   def penultimateRecursive[A](list: Seq[A]): A = list match {
-    case head :: _ :: Nil => head
-    case _ :: tail        => penultimateRecursive(tail)
+    case head +: _ +: Nil => head
+    case _ +: tail        => penultimateRecursive(tail)
     case _                => throw new NoSuchElementException
   }
 }

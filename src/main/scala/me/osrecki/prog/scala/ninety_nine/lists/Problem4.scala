@@ -19,7 +19,7 @@ object Problem4 {
   def lengthRecursive[A](list: Seq[A]): Int = {
     @tailrec
     def innerRecursion(list: Seq[A], length: Int): Int = list match {
-      case _ :: tail  => innerRecursion(tail, length + 1)
+      case _ +: tail  => innerRecursion(tail, length + 1)
       case _          => length
     }
 
