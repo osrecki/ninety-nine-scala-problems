@@ -27,6 +27,19 @@ class S99Int(val number: Int) {
     * }}}
     */
   def isComprimeTo(other: Int): Boolean = gcd(number, other) == 1
+
+  /**
+    * Calculate Euler's totient function phi(m).
+    * Euler's so-called totient function phi(m) is defined as the number of
+    * positive integers r (1 <= r <= m) that are coprime to m.
+    *
+    * ==Example==
+    * {{{
+    * scala> 10.totient
+    * res0: Int = 4
+    * }}}
+    */
+  def totient: Int = (1 to number).count(number isComprimeTo _)
 }
 
 object S99Int {
