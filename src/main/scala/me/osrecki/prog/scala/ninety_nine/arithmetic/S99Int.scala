@@ -40,6 +40,27 @@ class S99Int(val number: Int) {
     * }}}
     */
   def totient: Int = (1 to number).count(number isComprimeTo _)
+
+  /**
+    * Determine the prime factors of a given positive integer.
+    * Construct a flat list containing the prime factors in ascending order.
+    *
+    * ==Example==
+    * {{{
+    * scala> 315.primeFactors
+    * res0: List[Int] = List(3, 3, 5, 7)
+    * }}}
+    */
+  def primeFactors: Seq[Int] = {
+    def primeFactorsRec(n: Int, candidates: Seq[Int]): Seq[Int] = {
+      if (n < 2) Seq.empty[Int]
+      else if (n.isPrime) Seq(n)
+      else if (n % candidates.head == 0) candidates.head +: primeFactorsRec(n / candidates.head, candidates)
+      else primeFactorsRec(n, candidates.tail)
+    }
+
+    primeFactorsRec(number, primes)
+  }
 }
 
 object S99Int {
