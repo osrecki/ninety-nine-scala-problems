@@ -1,5 +1,7 @@
 package me.osrecki.prog.scala.ninety_nine.arithmetic
 
+import me.osrecki.prog.scala.ninety_nine.lists.Problem10.encode
+
 class S99Int(val number: Int) {
   import S99Int._
 
@@ -61,6 +63,19 @@ class S99Int(val number: Int) {
 
     primeFactorsRec(number, primes)
   }
+
+  /**
+    * Determine the prime factors of a given positive integer (2).
+    * Construct a list containing the prime factors and their multiplicity.
+    *
+    * ==Example==
+    * {{{
+    * scala> 315.primeFactorMultiplicity
+    * res0: Map[Int,Int] = Map(3 -> 2, 5 -> 1, 7 -> 1)
+    * }}}
+    */
+  def primeFactorsMultiplicity: Map[Int, Int] =
+    encode(number.primeFactors).map(_.swap).toMap
 }
 
 object S99Int {
