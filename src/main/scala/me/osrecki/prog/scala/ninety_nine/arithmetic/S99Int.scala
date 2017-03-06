@@ -145,4 +145,32 @@ object S99Int {
     */
   def listPrimesInRange(range: Range): Seq[Int] =
     primes.dropWhile(_ < range.start).takeWhile(_ <= range.end)
+
+  /**
+    * Given a range of integers by its lower and upper limit, print a list of
+    * all even numbers and their Goldbach composition.
+    *
+    * ==Example==
+    * {{{
+    * scala> printGoldbachList(9 to 20)
+    * 10 = 3 + 7
+    * 12 = 5 + 7
+    * 14 = 3 + 11
+    * 16 = 3 + 13
+    * 18 = 5 + 13
+    * 20 = 3 + 17
+    * }}}
+    */
+  def printGoldbachList(range: Range): Unit = {
+    printGoldbachListLimited(range, 0)
+  }
+
+  def printGoldbachListLimited(range: Range, threshold: Int): Unit = {
+    range.filter(number => number > 2 && number % 2 == 0)
+      .map(number => (number, number.goldbach))
+      .filter(_._2._1 >= threshold)
+      .foreach {
+        case (number, (p1, p2)) => println(s"$number = $p1 + $p2")
+      }
+  }
 }
