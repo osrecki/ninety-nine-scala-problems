@@ -41,7 +41,7 @@ class S99Int(val number: Int) {
     * res0: Int = 4
     * }}}
     */
-  def totient: Int = (1 to number).count(number isComprimeTo _)
+  def totient: Int = (1 to number).count(isComprimeTo)
 
   /**
     * Determine the prime factors of a given positive integer.
@@ -75,7 +75,7 @@ class S99Int(val number: Int) {
     * }}}
     */
   def primeFactorsMultiplicity: Map[Int, Int] =
-    encode(number.primeFactors).map(_.swap).toMap
+    encode(primeFactors).map(_.swap).toMap
 }
 
 object S99Int {
