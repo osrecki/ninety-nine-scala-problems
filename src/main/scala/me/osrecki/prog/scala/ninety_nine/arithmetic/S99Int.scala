@@ -92,6 +92,27 @@ class S99Int(val number: Int) {
     */
   def totientImproved: Int =
     primeFactorsMultiplicity.map { case (p, m) => (p - 1) * Math.pow(p, m - 1) }.product.toInt
+
+  /**
+    * Goldbach's conjecture says that every positive even number greater than 2
+    * is the sum of two prime numbers.  E.g. 28 = 5 + 23.  It is one of the
+    * most famous facts in number theory that has not been proved to be correct
+    * in the general case.  It has been numerically confirmed up to very large
+    * numbers (much larger than Scala's Int can represent).  Write a function
+    * to find the two prime numbers that sum up to a given even integer.
+    *
+    * ==Example==
+    * {{{
+    * scala> 28.goldbach
+    * res0: (Int, Int) = (5,23)
+    * }}}
+    */
+  def goldbach: (Int, Int) = {
+    primes.takeWhile(_ < number).find(p => (number - p).isPrime) match {
+      case Some(p)  => (p, number - p)
+      case None     => throw new IllegalArgumentException
+    }
+  }
 }
 
 object S99Int {
