@@ -97,7 +97,7 @@ class S99Int(val number: Int) {
 object S99Int {
   implicit def intToS99Int(i: Int): S99Int = new S99Int(i)
 
-  private val primes = 2 #:: Stream.from(3, 2).filter(_.isPrime)
+  val primes = 2 #:: Stream.from(3, 2).filter(_.isPrime)
 
   /**
     * Determine the greatest common divisor of two positive integer numbers.
