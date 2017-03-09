@@ -44,6 +44,19 @@ sealed abstract class Tree[+T] {
     * }}}
     */
   def leafList: List[T]
+
+  /**
+    * Collect the internal nodes of a binary tree in a list.
+    * An internal node of a binary tree has either one or two non-empty successors.
+    * Write a method internalList to collect them in a list.
+    *
+    * ==Example==
+    * {{{
+    * scala> Node('a', Node('b'), Node('c', Node('d'), Node('e'))).internalList
+    * res0: List[Char] = List(a, c)
+    * }}}
+    */
+  def internalList: List[T]
 }
 
 case class Node[+T](value: T, left: Tree[T], right: Tree[T]) extends Tree[T] {
@@ -64,6 +77,11 @@ case class Node[+T](value: T, left: Tree[T], right: Tree[T]) extends Tree[T] {
     case _          => left.leafList ::: right.leafList
   }
 
+  override def internalList: List[T] = (left, right) match {
+    case (End, End) => Nil
+    case _          => value :: left.internalList ::: right.internalList
+  }
+
   override def toString: String = s"T(${value.toString} ${left.toString} ${right.toString})"
 }
 
@@ -75,6 +93,8 @@ case object End extends Tree[Nothing] {
   override def leafCount: Int = 0
 
   override def leafList = Nil
+
+  override def internalList = Nil
 
   override def toString: String = "."
 }
