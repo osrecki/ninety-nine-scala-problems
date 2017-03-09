@@ -24,6 +24,12 @@ sealed abstract class Tree[+T] {
 
   /**
     * A leaf is a node with no successors. Write a method leafCount to count them.
+    *
+    * ==Example==
+    * {{{
+    * scala> Node('x', Node('x'), End).leafCount
+    * res0: Int = 1
+    * }}}
     */
   def leafCount: Int
 
