@@ -26,6 +26,18 @@ sealed abstract class Tree[+T] {
     * A leaf is a node with no successors. Write a method leafCount to count them.
     */
   def leafCount: Int
+
+  /**
+    * A leaf is a node with no successors. Write a method leafList to collect
+    * them in a list.
+    *
+    * ==Example==
+    * {{{
+    * scala> Node('a', Node('b'), Node('c', Node('d'), Node('e'))).leafList
+    * res0: List[Char] = List(b, d, e)
+    * }}}
+    */
+  def leafList: List[T]
 }
 
 case class Node[+T](value: T, left: Tree[T], right: Tree[T]) extends Tree[T] {
@@ -41,6 +53,11 @@ case class Node[+T](value: T, left: Tree[T], right: Tree[T]) extends Tree[T] {
     case _          => left.leafCount + right.leafCount
   }
 
+  override def leafList: List[T] = (left, right) match {
+    case (End, End) => List(value)
+    case _          => left.leafList ::: right.leafList
+  }
+
   override def toString: String = s"T(${value.toString} ${left.toString} ${right.toString})"
 }
 
@@ -50,6 +67,8 @@ case object End extends Tree[Nothing] {
   override def isMirrorOf[U](tree: Tree[U]): Boolean = tree == End
 
   override def leafCount: Int = 0
+
+  override def leafList = Nil
 
   override def toString: String = "."
 }
