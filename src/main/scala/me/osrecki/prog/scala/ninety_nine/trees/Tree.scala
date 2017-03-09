@@ -57,6 +57,20 @@ sealed abstract class Tree[+T] {
     * }}}
     */
   def internalList: List[T]
+
+  /**
+    * Collect the nodes at a given level in a list.
+    * A node of a binary tree is at level N if the path from the root to the node
+    * has length N-1. The root node is at level 1. Write a method atLevel to collect
+    * all nodes at a given level in a list.
+    *
+    * ==Example==
+    * {{{
+    * scala> Node('a', Node('b'), Node('c', Node('d'), Node('e'))).atLevel(2)
+    * res0: List[Char] = List(b, c)
+    * }}}
+    */
+  def atLevel(level: Int): List[T]
 }
 
 case class Node[+T](value: T, left: Tree[T], right: Tree[T]) extends Tree[T] {
@@ -82,6 +96,13 @@ case class Node[+T](value: T, left: Tree[T], right: Tree[T]) extends Tree[T] {
     case _          => value :: left.internalList ::: right.internalList
   }
 
+  override def atLevel(level: Int): List[T] = {
+    require(level > 0, "Root is at the level 1.")
+
+    if (level == 1) List(value)
+    else left.atLevel(level - 1) ::: right.atLevel(level - 1)
+  }
+
   override def toString: String = s"T(${value.toString} ${left.toString} ${right.toString})"
 }
 
@@ -95,6 +116,8 @@ case object End extends Tree[Nothing] {
   override def leafList = Nil
 
   override def internalList = Nil
+
+  override def atLevel(level: Int) = Nil
 
   override def toString: String = "."
 }
