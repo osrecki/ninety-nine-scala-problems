@@ -21,6 +21,11 @@ sealed abstract class Tree[+T] {
     * contents of the nodes.
     */
   def isMirrorOf[U](tree: Tree[U]): Boolean
+
+  /**
+    * A leaf is a node with no successors. Write a method leafCount to count them.
+    */
+  def leafCount: Int
 }
 
 case class Node[+T](value: T, left: Tree[T], right: Tree[T]) extends Tree[T] {
@@ -31,6 +36,11 @@ case class Node[+T](value: T, left: Tree[T], right: Tree[T]) extends Tree[T] {
     case _              => false
   }
 
+  override def leafCount: Int = (left, right) match {
+    case (End, End) => 1
+    case _          => left.leafCount + right.leafCount
+  }
+
   override def toString: String = s"T(${value.toString} ${left.toString} ${right.toString})"
 }
 
@@ -38,6 +48,8 @@ case object End extends Tree[Nothing] {
   override def isSymmetric: Boolean = true
 
   override def isMirrorOf[U](tree: Tree[U]): Boolean = tree == End
+
+  override def leafCount: Int = 0
 
   override def toString: String = "."
 }
