@@ -122,6 +122,36 @@ case object End extends Tree[Nothing] {
   override def toString: String = "."
 }
 
+object Tree {
+  /**
+    * Construct completely balanced binary trees.
+    * In a completely balanced binary tree, the following property holds for
+    * every node: The number of nodes in its left subtree and the number of
+    * nodes in its right subtree are almost equal, which means their difference
+    * is not greater than one.
+    * Write a function Tree.cBalanced to construct completely balanced binary
+    * trees for a given number of nodes. The function should generate all solutions.
+    * The function should take as parameters the number of nodes and a single value
+    * to put in all of them.
+    *
+    * ==Example==
+    * {{{
+    * scala> Tree.cBalanced(4, "x")
+    * res0: List(Node[String]) = List(T(x T(x . .) T(x . T(x . .))), T(x T(x . .) T(x T(x . .) .)), ...
+    * }}}
+    */
+  def cBalanced[T](nodes: Int, value: T): List[Tree[T]] = nodes match {
+    case n if n < 1       => List(End)
+    case n if n % 2 == 1  =>
+      val subtrees = cBalanced(n / 2, value)
+      subtrees.flatMap { left => subtrees.map { right => Node(value, left, right) } }
+    case n                =>
+      val smallerSubtrees = cBalanced((n - 1) / 2, value)
+      val largerSubtrees = cBalanced((n - 1) / 2 + 1, value)
+      smallerSubtrees.flatMap { t1 => largerSubtrees.flatMap { t2 => List(Node(value, t1, t2), Node(value, t2, t1)) } }
+  }
+}
+
 object Node {
   def apply[T](value: T): Node[T] = Node(value, End, End)
 }
