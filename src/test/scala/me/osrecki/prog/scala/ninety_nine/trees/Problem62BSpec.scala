@@ -1,6 +1,6 @@
 package me.osrecki.prog.scala.ninety_nine.trees
 
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.{ FlatSpec, Matchers }
 
 class Problem62BSpec extends FlatSpec with Matchers {
   private val tree = Node('a', Node('b'), Node('c', Node('d'), Node('e')))
@@ -10,8 +10,8 @@ class Problem62BSpec extends FlatSpec with Matchers {
   }
 
   it should "throw an exception if the level is not greater than zero" in {
-    val exception = the [IllegalArgumentException] thrownBy tree.atLevel(0)
-    exception.getMessage should equal ("requirement failed: Root is at the level 1.")
+    val exception = the[IllegalArgumentException] thrownBy tree.atLevel(0)
+    exception.getMessage should equal("requirement failed: Root is at the level 1.")
   }
 
   it should "return an empty list for the End node" in {

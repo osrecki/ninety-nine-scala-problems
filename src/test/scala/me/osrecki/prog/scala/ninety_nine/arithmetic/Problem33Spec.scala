@@ -1,6 +1,6 @@
 package me.osrecki.prog.scala.ninety_nine.arithmetic
 
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.{ FlatSpec, Matchers }
 import org.scalatest.Inspectors._
 import S99Int.intToS99Int
 

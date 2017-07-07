@@ -3,10 +3,10 @@ package me.osrecki.prog.scala.ninety_nine.arithmetic
 import S99Int._
 
 /**
-  * Compare the two methods of calculating Euler's totient function.
-  * Use the solutions of problems P34 and P37 to compare the algorithms. Try to
-  * calculate phi(10090) as an example.
-  */
+ * Compare the two methods of calculating Euler's totient function.
+ *  Use the solutions of problems P34 and P37 to compare the algorithms. Try to
+ *  calculate phi(10090) as an example.
+ */
 object Problem38 {
   val iterationsCount = 100
 
@@ -34,6 +34,7 @@ object Problem38 {
   }
 
   def main(args: Array[String]): Unit = {
-    test(10090)
+    val number = 10090
+    test(number)
   }
 }

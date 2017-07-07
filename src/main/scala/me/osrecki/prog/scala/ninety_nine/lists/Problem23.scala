@@ -2,18 +2,18 @@ package me.osrecki.prog.scala.ninety_nine.lists
 
 import scala.annotation.tailrec
 
-/**
-  * Extract a given number of randomly selected elements from a list.
-  *
-  * ==Example==
-  * {{{
-  * scala> randomSelect(3, List('a, 'b, 'c, 'd, 'f, 'g, 'h))
-  * res0: List[Symbol] = List('e, 'd, 'a)
-  * }}}
-  */
-object Problem23 {
-  import Problem20.removeAt
+import Problem20.removeAt
 
+/**
+ * Extract a given number of randomly selected elements from a list.
+ *
+ *  ==Example==
+ *  {{{
+ *  scala> randomSelect(3, List('a, 'b, 'c, 'd, 'f, 'g, 'h))
+ *  res0: List[Symbol] = List('e, 'd, 'a)
+ *  }}}
+ */
+object Problem23 {
   def randomSelect[A](n: Int, list: Seq[A], seed: Long): Seq[A] = {
     val random = new util.Random(seed)
 

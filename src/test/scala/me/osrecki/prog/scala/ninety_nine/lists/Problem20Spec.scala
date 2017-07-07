@@ -1,6 +1,6 @@
 package me.osrecki.prog.scala.ninety_nine.lists
 
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.{ FlatSpec, Matchers }
 import Problem20._
 
 class Problem20Spec extends FlatSpec with Matchers {
@@ -13,7 +13,7 @@ class Problem20Spec extends FlatSpec with Matchers {
   }
 
   it should "throw a NoSuchElementException for K out of bounds" in {
-    a [NoSuchElementException] should be thrownBy removeAt(-1, list)
-    a [NoSuchElementException] should be thrownBy removeAt(4, list)
+    a[NoSuchElementException] should be thrownBy removeAt(-1, list)
+    a[NoSuchElementException] should be thrownBy removeAt(4, list)
   }
 }

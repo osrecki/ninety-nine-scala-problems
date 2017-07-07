@@ -1,6 +1,6 @@
 package me.osrecki.prog.scala.ninety_nine.trees
 
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.{ FlatSpec, Matchers }
 
 class Problem62Spec extends FlatSpec with Matchers {
   it should "collect all internal nodes of a tree" in {

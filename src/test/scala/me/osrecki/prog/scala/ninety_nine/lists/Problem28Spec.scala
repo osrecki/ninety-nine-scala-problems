@@ -1,6 +1,6 @@
 package me.osrecki.prog.scala.ninety_nine.lists
 
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.{ FlatSpec, Matchers }
 import Problem28._
 
 class Problem28Spec extends FlatSpec with Matchers {
@@ -16,7 +16,7 @@ class Problem28Spec extends FlatSpec with Matchers {
 
   it should "sort a list of lists according to the length frequency of sublists" in {
     val sorted = List(List('i, 'j, 'k, 'l), List('o), List('a, 'b, 'c),
-                      List('f, 'g, 'h), List('d, 'e), List('d, 'e), List('m, 'n))
+      List('f, 'g, 'h), List('d, 'e), List('d, 'e), List('m, 'n))
 
     lsortFreq(lists) shouldBe sorted
   }

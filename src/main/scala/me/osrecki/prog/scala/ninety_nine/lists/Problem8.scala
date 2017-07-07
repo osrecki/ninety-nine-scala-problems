@@ -3,16 +3,16 @@ package me.osrecki.prog.scala.ninety_nine.lists
 import scala.annotation.tailrec
 
 /**
-  * Eliminate consecutive duplicates of list elements.
-  * If a list contains repeated elements they should be replaced with a single
-  * copy of the element. The order of the elements should not be changed.
-  *
-  * ==Example==
-  * {{{
-  * scala> compress(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
-  * res0: List[Symbol] = List('a, 'b, 'c, 'a, 'd, 'e)
-  * }}}
-  */
+ * Eliminate consecutive duplicates of list elements.
+ *  If a list contains repeated elements they should be replaced with a single
+ *  copy of the element. The order of the elements should not be changed.
+ *
+ *  ==Example==
+ *  {{{
+ *  scala> compress(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
+ *  res0: List[Symbol] = List('a, 'b, 'c, 'a, 'd, 'e)
+ *  }}}
+ */
 object Problem8 {
   def compressFold[A](list: Seq[A]): Seq[A] =
     list.foldRight(Seq.empty[A]) { (elem, compressed) =>
@@ -27,6 +27,6 @@ object Problem8 {
       case _            => compressed.reverse
     }
 
-   innerRecursion(list, Seq.empty[A])
+    innerRecursion(list, Seq.empty[A])
   }
 }

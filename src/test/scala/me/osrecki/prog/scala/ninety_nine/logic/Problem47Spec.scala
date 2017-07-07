@@ -2,7 +2,7 @@ package me.osrecki.prog.scala.ninety_nine.logic
 
 import me.osrecki.prog.scala.ninety_nine.TestUtility.printlnToString
 import me.osrecki.prog.scala.ninety_nine.logic.S99Logic.table2
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.{ FlatSpec, Matchers }
 
 import S99Boolean.booleanToS99Boolean
 

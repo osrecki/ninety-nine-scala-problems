@@ -1,6 +1,6 @@
 package me.osrecki.prog.scala.ninety_nine.lists
 
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.{ FlatSpec, Matchers }
 import Problem21._
 
 class Problem21Spec extends FlatSpec with Matchers {
@@ -11,7 +11,7 @@ class Problem21Spec extends FlatSpec with Matchers {
     val newList = elem +: list
 
     insertAt(elem, -10, list) shouldBe newList
-    insertAt(elem, 0, list)   shouldBe newList
+    insertAt(elem, 0, list) shouldBe newList
   }
 
   it should "insert an element in the middle of the list" in {

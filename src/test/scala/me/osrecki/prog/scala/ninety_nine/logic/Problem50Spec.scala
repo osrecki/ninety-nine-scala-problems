@@ -1,6 +1,6 @@
 package me.osrecki.prog.scala.ninety_nine.logic
 
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.{ FlatSpec, Matchers }
 import scala.collection.immutable.Seq
 import Problem50.huffman
 

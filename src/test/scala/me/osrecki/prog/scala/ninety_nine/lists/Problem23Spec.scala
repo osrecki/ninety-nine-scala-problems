@@ -1,6 +1,6 @@
 package me.osrecki.prog.scala.ninety_nine.lists
 
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.{ FlatSpec, Matchers }
 import Problem23._
 
 class Problem23Spec extends FlatSpec with Matchers {
@@ -8,8 +8,8 @@ class Problem23Spec extends FlatSpec with Matchers {
   val seed = 1
 
   it should "extract 0 elements from a list" in {
-    randomSelect(-1, list, seed)  shouldBe Nil
-    randomSelect(0, list, seed)   shouldBe Nil
+    randomSelect(-1, list, seed) shouldBe Nil
+    randomSelect(0, list, seed) shouldBe Nil
   }
 
   it should "extract 1 randomly selected element from a list" in {
