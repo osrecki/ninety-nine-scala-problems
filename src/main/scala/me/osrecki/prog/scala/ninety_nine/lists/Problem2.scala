@@ -3,13 +3,14 @@ package me.osrecki.prog.scala.ninety_nine.lists
 import java.util.NoSuchElementException
 
 /**
+ * ==Problem==
  * Find the last but one element of a list.
  *
- *  ==Example==
- *  {{{
- *  scala> penultimate(List(1, 1, 2, 3, 5, 8))
- *  res0: Int = 5
- *  }}}
+ * ==Example==
+ * {{{
+ * scala> penultimate(List(1, 1, 2, 3, 5, 8))
+ * res0: Int = 5
+ * }}}
  */
 object Problem2 {
   def penultimateBuiltIn[A](list: Seq[A]): A =

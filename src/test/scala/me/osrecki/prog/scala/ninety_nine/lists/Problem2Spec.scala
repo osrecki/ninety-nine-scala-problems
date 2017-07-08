@@ -18,13 +18,15 @@ class Problem2Spec extends FlatSpec with Matchers {
     penultimateRecursive(list) shouldBe 20
   }
 
-  it should "throw a NoSuchElementException for lists with less than two elements" in {
+  it should "throw a NoSuchElementException for a list with one element" in {
     val singleton = List(1)
 
     a[NoSuchElementException] should be thrownBy penultimateBuiltIn(singleton)
-    a[NoSuchElementException] should be thrownBy penultimateBuiltIn(Nil)
-
     a[NoSuchElementException] should be thrownBy penultimateRecursive(singleton)
+  }
+
+  it should "throw a NoSuchElementException for an empty list" in {
+    a[NoSuchElementException] should be thrownBy penultimateBuiltIn(Nil)
     a[NoSuchElementException] should be thrownBy penultimateRecursive(Nil)
   }
 }

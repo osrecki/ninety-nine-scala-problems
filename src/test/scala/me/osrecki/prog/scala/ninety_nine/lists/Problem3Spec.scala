@@ -21,13 +21,13 @@ class Problem3Spec extends FlatSpec with Matchers {
     nthRecursive(3, list) shouldBe -12
   }
 
-  it should "throw an IndexOutOfBoundsException for a K less than zero" in {
+  it should "throw an IndexOutOfBoundsException for an index less than zero" in {
 
     an[IndexOutOfBoundsException] should be thrownBy nthBuiltIn(-1, list)
     an[IndexOutOfBoundsException] should be thrownBy nthRecursive(-1, list)
   }
 
-  it should "throw an IndexOutOfBoundsException for a K (zero-indexed) greater than list size" in {
+  it should "throw an IndexOutOfBoundsException for an index (zero-indexed) greater than list size" in {
     an[IndexOutOfBoundsException] should be thrownBy nthBuiltIn(5, list)
     an[IndexOutOfBoundsException] should be thrownBy nthRecursive(5, list)
   }

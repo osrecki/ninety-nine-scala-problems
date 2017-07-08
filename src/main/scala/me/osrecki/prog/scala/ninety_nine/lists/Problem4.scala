@@ -3,13 +3,14 @@ package me.osrecki.prog.scala.ninety_nine.lists
 import scala.annotation.tailrec
 
 /**
+ * ==Problem==
  * Find the number of elements of a list.
  *
- *  ==Example==
- *  {{{
- *  scala> length(List(1, 1, 2, 3, 5, 8))
- *  res0: Int = 6
- *  }}}
+ * ==Example==
+ * {{{
+ * scala> length(List(1, 1, 2, 3, 5, 8))
+ * res0: Int = 6
+ * }}}
  */
 object Problem4 {
   def lengthBuiltIn[A](list: Seq[A]): Int = list.length
