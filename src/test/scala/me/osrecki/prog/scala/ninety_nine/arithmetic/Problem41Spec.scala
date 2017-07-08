@@ -2,9 +2,8 @@ package me.osrecki.prog.scala.ninety_nine
 package arithmetic
 
 import org.scalatest.{FlatSpec, Matchers}
-import TestUtility._
-
 import S99Int._
+import TestUtility._
 
 class Problem41Spec extends FlatSpec with Matchers {
   it should "print list of Goldbach compositions for a given range" in {

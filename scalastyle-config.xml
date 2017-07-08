@@ -121,11 +121,8 @@
   <!-- Values -->
   <check class="org.scalastyle.scalariform.NullChecker" level="error" enabled="true"/>
   <check class="org.scalastyle.scalariform.UppercaseLChecker" level="error" enabled="true"/>
-  <check class="org.scalastyle.scalariform.MagicNumberChecker" level="error" enabled="true">
-    <parameters>
-      <parameter name="ignore"><![CDATA[-1,0,1,2,3]]></parameter>
-    </parameters>
-  </check>
+  <!-- It is OK to have magic numbers in tests -->
+  <check class="org.scalastyle.scalariform.MagicNumberChecker" level="error" enabled="false"/>
 
   <!-- Lengths -->
   <check class="org.scalastyle.file.FileLengthChecker" level="error" enabled="true">
