@@ -4,7 +4,7 @@ import org.scalatest.{FlatSpec, Matchers}
 import Problem7._
 
 class Problem7Spec extends FlatSpec with Matchers {
-  it should "flatten a list of Any" in {
+  it should "flatten a list with deeply nested lists" in {
     val list1 = List(List(1, 1), 2, List(3, List(5, 8)))
     flatten(list1) shouldBe List(1, 1, 2, 3, 5, 8)
 

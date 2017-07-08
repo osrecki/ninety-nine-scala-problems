@@ -10,4 +10,8 @@ class Problem12Spec extends FlatSpec with Matchers {
 
     decode(list) shouldBe decoded
   }
+
+  it should "return Nil for an empty list" in {
+    decode(Nil) shouldBe Nil
+  }
 }

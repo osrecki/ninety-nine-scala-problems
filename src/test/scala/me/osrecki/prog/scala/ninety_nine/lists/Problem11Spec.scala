@@ -10,4 +10,8 @@ class Problem11Spec extends FlatSpec with Matchers {
 
     encodeModified(list) shouldBe encoded
   }
+
+  it should "return Nil for an empty list" in {
+    encodeModified(Nil) shouldBe Nil
+  }
 }

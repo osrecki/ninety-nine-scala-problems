@@ -5,15 +5,23 @@ import Problem9._
 
 class Problem9Spec extends FlatSpec with Matchers {
   it should "pack consecutive duplicates of list elements into sub-lists" in {
-    val list1 = List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)
-    val packed1 = List(List('a, 'a, 'a, 'a), List('b), List('c, 'c), List('a, 'a), List('d), List('e, 'e, 'e, 'e))
+    val list = List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)
+    val packed = List(List('a, 'a, 'a, 'a), List('b), List('c, 'c), List('a, 'a), List('d), List('e, 'e, 'e, 'e))
 
-    packFold(list1) shouldBe packed1
-    packRecursive(list1) shouldBe packed1
+    packFold(list) shouldBe packed
+    packRecursive(list) shouldBe packed
+  }
 
-    val list2 = List('a, 'b', 'c)
-    val packed2 = list2.map(List(_))
-    packFold(list2) shouldBe packed2
-    packRecursive(list2) shouldBe packed2
+  it should "pack a list without duplicates" in {
+    val list = List('a, 'b', 'c)
+    val packed = list.map(List(_))
+
+    packFold(list) shouldBe packed
+    packRecursive(list) shouldBe packed
+  }
+
+  it should "return Nil for an empty list" in {
+    packFold(Nil) shouldBe Nil
+    packRecursive(Nil) shouldBe Nil
   }
 }

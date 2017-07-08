@@ -14,4 +14,11 @@ class Problem13Spec extends FlatSpec with Matchers {
 
     encodeDirect(list) shouldBe encoded
   }
+
+  it should "run-length encode a list with no duplicates" in {
+    val list = List(2, 5, 0, -1, 100)
+    val encoded = list.map((1, _))
+
+    encodeDirect(list) shouldBe encoded
+  }
 }

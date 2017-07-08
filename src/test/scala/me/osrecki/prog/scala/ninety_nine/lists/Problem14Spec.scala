@@ -13,4 +13,11 @@ class Problem14Spec extends FlatSpec with Matchers {
     duplicateRecursive(list) shouldBe duplicated
     duplicateBuffer(list) shouldBe duplicated
   }
+
+  it should "return Nil for an empty list" in {
+    duplicateBuiltIn(Nil) shouldBe Nil
+    duplicateFold(Nil) shouldBe Nil
+    duplicateRecursive(Nil) shouldBe Nil
+    duplicateBuffer(Nil) shouldBe Nil
+  }
 }

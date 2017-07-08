@@ -17,4 +17,9 @@ class Problem16Spec extends FlatSpec with Matchers {
     dropBuiltIn(3, list) shouldBe filtered
     dropRecursive(3, list) shouldBe filtered
   }
+
+  it should "return Nil for an empty list" in {
+    dropBuiltIn(4, Nil) shouldBe Nil
+    dropRecursive(4, Nil) shouldBe Nil
+  }
 }
