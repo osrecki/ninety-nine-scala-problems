@@ -1,7 +1,7 @@
 package me.osrecki.prog.scala.ninety_nine
 package logic
 
-import org.scalatest.{ FlatSpec, Matchers }
+import org.scalatest.{FlatSpec, Matchers}
 import TestUtility._
 
 import S99Logic._

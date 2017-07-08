@@ -11,5 +11,6 @@ object Scalariform {
   lazy val formatting: Setting[IFormattingPreferences] = {
     preferences := preferences.value
       .setPreference(AlignSingleLineCaseStatements, true)
+      .setPreference(SpacesAroundMultiImports, false)
   }
 }

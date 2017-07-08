@@ -1,7 +1,7 @@
 package me.osrecki.prog.scala.ninety_nine.lists
 
 import me.osrecki.prog.scala.ninety_nine.lists.Problem11.encodeModified
-import org.scalatest.{ FlatSpec, Matchers }
+import org.scalatest.{FlatSpec, Matchers}
 
 class Problem11Spec extends FlatSpec with Matchers {
   it should "run-length encode a list" in {

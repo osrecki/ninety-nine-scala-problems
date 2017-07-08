@@ -1,6 +1,6 @@
 package me.osrecki.prog.scala.ninety_nine.trees
 
-import org.scalatest.{ FlatSpec, Matchers }
+import org.scalatest.{FlatSpec, Matchers}
 
 class Problem55Spec extends FlatSpec with Matchers {
   private val element = 'x'

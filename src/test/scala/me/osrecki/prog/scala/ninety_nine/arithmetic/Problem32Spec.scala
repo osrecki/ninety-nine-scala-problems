@@ -1,6 +1,6 @@
 package me.osrecki.prog.scala.ninety_nine.arithmetic
 
-import org.scalatest.{ FlatSpec, Matchers }
+import org.scalatest.{FlatSpec, Matchers}
 import S99Int.gcd
 
 class Problem32Spec extends FlatSpec with Matchers {

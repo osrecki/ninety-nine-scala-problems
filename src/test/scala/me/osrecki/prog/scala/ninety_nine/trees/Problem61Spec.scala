@@ -1,6 +1,6 @@
 package me.osrecki.prog.scala.ninety_nine.trees
 
-import org.scalatest.{ FlatSpec, Matchers }
+import org.scalatest.{FlatSpec, Matchers}
 
 class Problem61Spec extends FlatSpec with Matchers {
   it should "count the number of leaves in a tree" in {

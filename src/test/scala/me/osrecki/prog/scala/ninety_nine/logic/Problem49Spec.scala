@@ -1,6 +1,6 @@
 package me.osrecki.prog.scala.ninety_nine.logic
 
-import org.scalatest.{ FlatSpec, Matchers }
+import org.scalatest.{FlatSpec, Matchers}
 import S99Boolean._
 
 class Problem49Spec extends FlatSpec with Matchers {

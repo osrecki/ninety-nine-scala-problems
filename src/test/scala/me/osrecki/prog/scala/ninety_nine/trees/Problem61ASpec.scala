@@ -1,6 +1,6 @@
 package me.osrecki.prog.scala.ninety_nine.trees
 
-import org.scalatest.{ FlatSpec, Matchers }
+import org.scalatest.{FlatSpec, Matchers}
 
 class Problem61ASpec extends FlatSpec with Matchers {
   it should "collect the leaves of a tree in a list" in {

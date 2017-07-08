@@ -1,6 +1,6 @@
 package me.osrecki.prog.scala.ninety_nine.lists
 
-import org.scalatest.{ FlatSpec, Matchers }
+import org.scalatest.{FlatSpec, Matchers}
 import Problem14._
 
 class Problem14Spec extends FlatSpec with Matchers {
