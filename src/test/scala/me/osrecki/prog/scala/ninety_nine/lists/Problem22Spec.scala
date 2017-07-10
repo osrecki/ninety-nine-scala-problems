@@ -17,4 +17,9 @@ class Problem22Spec extends FlatSpec with Matchers {
     rangeBuiltIn(4, 9) shouldBe range
     rangeRecursive(4, 9) shouldBe range
   }
+
+  it should "create an empty list" in {
+    rangeBuiltIn(5, 3) shouldBe Nil
+    rangeRecursive(5, 3) shouldBe Nil
+  }
 }

@@ -5,13 +5,14 @@ import scala.annotation.tailrec
 import Problem20.removeAt
 
 /**
+ * ==Problem==
  * Extract a given number of randomly selected elements from a list.
  *
- *  ==Example==
- *  {{{
- *  scala> randomSelect(3, List('a, 'b, 'c, 'd, 'f, 'g, 'h))
- *  res0: List[Symbol] = List('e, 'd, 'a)
- *  }}}
+ * ==Example==
+ * {{{
+ * scala> randomSelect(3, List('a, 'b, 'c, 'd, 'f, 'g, 'h))
+ * res0: List[Symbol] = List('e, 'd, 'a)
+ * }}}
  */
 object Problem23 {
   def randomSelect[A](n: Int, list: Seq[A], seed: Long): Seq[A] = {

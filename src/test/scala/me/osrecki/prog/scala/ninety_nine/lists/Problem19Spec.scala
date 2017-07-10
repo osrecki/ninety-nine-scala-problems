@@ -17,4 +17,10 @@ class Problem19Spec extends FlatSpec with Matchers {
 
     rotate(-2, list) shouldBe rotated
   }
+
+  it should "normalize numbers greater than the size of a list" in {
+    val rotated = List('d, 'e, 'f, 'g, 'h, 'i, 'j, 'k, 'a, 'b, 'c)
+
+    rotate(14, list) shouldBe rotated
+  }
 }
