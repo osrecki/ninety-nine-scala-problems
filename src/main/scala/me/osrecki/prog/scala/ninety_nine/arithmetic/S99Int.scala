@@ -1,10 +1,10 @@
 package me.osrecki.prog.scala.ninety_nine.arithmetic
 
+import scala.annotation.tailrec
 import scala.language.implicitConversions
+
 import me.osrecki.prog.scala.ninety_nine.lists.Problem10.encode
 import S99Int._
-
-import scala.annotation.tailrec
 
 class S99Int(val number: Int) {
   /**
