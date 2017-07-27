@@ -5,6 +5,8 @@ import S99Int.intToS99Int
 
 class Problem36Spec extends FlatSpec with Matchers {
   it should "construct a map with prime factors and their multiplicity" in {
+    0.primeFactorsMultiplicity shouldBe Map.empty[Int, Int]
+    1.primeFactorsMultiplicity shouldBe Map.empty[Int, Int]
     3.primeFactorsMultiplicity shouldBe Map(3 -> 1)
     10.primeFactorsMultiplicity shouldBe Map(2 -> 1, 5 -> 1)
     99.primeFactorsMultiplicity shouldBe Map(3 -> 2, 11 -> 1)
